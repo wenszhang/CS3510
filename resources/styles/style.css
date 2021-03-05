@@ -1,0 +1,344 @@
+:root {
+    --theme-grey: #3C3C3C;
+    --theme-green: #a5b1a4;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dedede;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+nav {
+
+}
+
+/*=============================================================================================================================================================================================*/
+/* Home page */
+/*=============================================================================================================================================================================================*/
+
+#home {
+}
+
+/* Header ---------- */
+
+#home header {
+    color: #ffffff;
+    /*overflow: show; Do not set hidden, will break dropdown*/
+    background-color: #3c3c3c;
+    padding-bottom: 1em;
+    border: solid var(--theme-green);
+    border-width: 0 0 1.5em 0;
+}
+
+#home-title {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-left: 0.5em;
+    margin-right: 0em;
+    margin-top: 0.4em;
+}
+
+#home header nav {
+    display: inline-block;
+    position: relative;
+    float: right;
+    font-size: 18px;
+    margin-right: 2em;
+    margin-top: 2em;
+}
+
+/* Dropdown ---------------- */
+.home-dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 23px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.home-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.home-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    /*z-index: 1000;*/
+    /*overflow: visible;*/
+    left: auto;
+    right: 0;
+}
+
+.home-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.home-dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.home-dropdown:hover .home-dropdown-content {
+    display: block;
+}
+
+.home-dropdown:hover .dropbtn {
+    /*background-color: #3e8e41;*/
+}
+
+/* Gallery ---------- */
+
+#gallery {
+    box-sizing: border-box;
+    display: table;
+    text-align: center;
+    padding-top: 1em;
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+#gallery-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margins: auto;
+    grid-column-gap: 0.8em;
+}
+
+#gallery-table .column {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gallery-table img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-top: 0.8em;
+}
+
+@media only screen and (max-width: 900px) {
+    #gallery {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+
+    #gallery-table {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    #gallery {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    #gallery-table {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Lightbox ----------*/
+.lightbox {
+    /* Default to hidden */
+    display: none;
+
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* A bit of padding around image */
+    padding: 1em;
+
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+    display: block;
+}
+
+.lightbox span {
+    /* Full width and height */
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* Size and position background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Footer ---------- */
+
+#home footer {
+    padding: 20px;
+}
+
+/* Zoom animation */
+.zoom:hover, .column img:hover {
+    transition: transform .2s;
+    transform: scale(1.2);
+}
+
+/*=============================================================================================================================================================================================*/
+/* About page
+/*=============================================================================================================================================================================================*/
+#about {
+}
+
+#about-spacer {
+    height: 15em;
+}
+
+#about-content {
+    width: 30em;
+    margin: auto;
+    background-color: var(--theme-grey);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#about-grid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+#about-grid #left-panel {
+    border-right: 10px solid;
+    border-color: var(--theme-green);
+}
+
+#about-face {
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 50%;
+}
+
+#about-grid #right-panel {
+    /*background-color: white;*/
+    /*color: black;*/
+    padding-left: 20px;
+    margin: auto;
+    /*white-space: pre-wrap;*/
+}
+
+#about-grid #right-panel a, #about-grid #right-panel a:visited {
+    color: var(--theme-green);
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+    #about-spacer {
+        height: 0vh;
+    }
+
+    #about-content {
+        width: 80vw;
+    }
+
+    #about-grid {
+        display: inline;
+    }
+
+    #about-grid #left-panel {
+        border-right: 0px;
+        border-bottom: 10px solid;
+        border-color: var(--theme-green);
+    }
+
+    #about-grid #right-panel {
+        padding-top: 3vh;
+    }
+
+    #about-face {
+        padding-left: 4.5vw;
+        padding-bottom: 6vw;
+    }
+}
+
+/*=============================================================================================================================================================================================*/
+/* Contact page
+/*=============================================================================================================================================================================================*/
+
+#contact {
+}
+
+#contact-spacer {
+    height: 15em;
+}
+
+#contact-content {
+    width: 30em;
+    margin: auto;
+    background-color: var(--theme-grey);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#contact-desc {
+    padding: 20px;
+}
+
+#contact-content #link-list {
+}
+
+#contact-content #link-list .link-wrapper {
+    margin: 2vh;
+}
+
+#contact-content #link-list .link-wrapper a {
+    color: var(--theme-green);
+    text-decoration: underline;
+    margin-bottom: 2vh;
+}
+
+#contact-content #link-list .link-wrapper img {
+    width: 2vw;
+    height: 2vw;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#contact a, #contact a:visited {
+    padding: 20px;
+    color: var(--theme-green);
+    text-decoration: underline;
+}
+
+#contact #back{
+    margin-top: 20px;
+}
